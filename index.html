@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy 6 Months, Saneey 💗</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--rose:#ff5d8f;--berry:#a3174f;--blush:#ffe3ec;--petal:#fff5f8;--lav:#e9dcff;--ink:#4a1730;
+--hand:"Caveat","Segoe Script","Comic Sans MS",cursive;--body:"Quicksand","Trebuchet MS",Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:#ffe3ec;background:linear-gradient(180deg,#fff5f8,#ffe3ec 40%,#e9dcff 100%);background-attachment:fixed;line-height:1.6;overflow-x:hidden}
+section{padding:56px 18px;max-width:900px;margin:0 auto;text-align:center}
+h2{font-family:var(--hand);font-size:2.5rem;color:var(--berry);line-height:1.1;margin-bottom:8px}
+.sub{opacity:.75;margin-bottom:26px}
+button{font-family:inherit;cursor:pointer;border:0}
+.btn{background:linear-gradient(135deg,#ff5d8f,#ff8fb1);color:#fff;font-weight:700;font-size:1.05rem;padding:13px 26px;border-radius:40px;box-shadow:0 8px 20px rgba(255,93,143,.35)}
+.btn:active{transform:scale(.94)}
+#hearts{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:1;overflow:hidden}
+.fh{position:absolute;bottom:-40px;animation:rise linear forwards;opacity:.7}
+@keyframes rise{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+
+/* intro */
+#intro{position:fixed;top:0;left:0;right:0;bottom:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 30%,#fff,#ffe3ec 60%,#e9dcff);transition:opacity .9s;text-align:center;padding:20px}
+#intro.gone{opacity:0;pointer-events:none}
+#intro p{font-family:var(--hand);font-size:2rem;color:var(--berry);margin:10px 0}
+.env{width:210px;height:140px;background:#ff5d8f;border-radius:8px;position:relative;box-shadow:0 14px 30px rgba(163,23,79,.3);animation:bob 2s ease-in-out infinite;cursor:pointer;margin:10px 0}
+.env::before{content:"";position:absolute;top:0;left:0;right:0;bottom:0;border-radius:8px;background:linear-gradient(155deg,transparent 49.5%,#ff7ea5 50%) left/50% 100% no-repeat,linear-gradient(205deg,transparent 49.5%,#ff7ea5 50%) right/50% 100% no-repeat}
+.env::after{content:"💌";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:3rem}
+@keyframes bob{50%{transform:translateY(-10px) rotate(-2deg)}}
+
+/* hero */
+#hero{padding-top:40px}
+.frame{width:220px;height:293px;margin:0 auto 18px;border-radius:50% 50% 46% 46%/42% 42% 58% 58%;border:7px solid #fff;box-shadow:0 12px 32px rgba(163,23,79,.3);overflow:hidden;background:#ffe3ec;animation:bob 4s ease-in-out infinite}
+.frame img{width:100%;height:100%;object-fit:cover;display:block}
+#hero h1{font-family:var(--hand);font-size:3.2rem;line-height:1;color:var(--berry)}
+#hero .dates{margin:12px auto 0;display:inline-block;background:#fff;padding:8px 18px;border-radius:30px;font-weight:700;box-shadow:0 4px 14px rgba(163,23,79,.15)}
+#hero .scroll{margin-top:22px;font-size:1.8rem;animation:bob 1.6s infinite}
+
+/* counters */
+.grid{display:flex;margin:14px -5px 26px}
+.cell{flex:1;margin:0 5px;background:#fff;border-radius:18px;padding:12px 4px;box-shadow:0 6px 16px rgba(163,23,79,.12)}
+.cell b{display:block;font-size:1.6rem;color:var(--rose)}
+.cell span{font-size:.78rem;opacity:.7}
+#cdMsg{font-family:var(--hand);font-size:1.7rem;color:var(--berry)}
+
+/* timeline */
+.tl{position:relative;margin:0 auto;max-width:520px;text-align:left}
+.tl::before{content:"";position:absolute;left:22px;top:0;bottom:0;width:4px;background:repeating-linear-gradient(#ff5d8f 0,#ff5d8f 8px,transparent 8px,transparent 16px);border-radius:4px}
+.mo{position:relative;padding-left:62px;margin-bottom:18px}
+.mo .dot{position:absolute;left:2px;top:6px;width:44px;height:44px;border-radius:50%;background:#fff;border:3px solid #ff5d8f;text-align:center;line-height:38px;font-size:1.3rem}
+.mo .card{background:#fff;border-radius:18px;padding:12px 16px;box-shadow:0 6px 16px rgba(163,23,79,.12);width:100%;text-align:left;font:inherit;color:inherit}
+.mo h3{font-size:1.05rem;color:var(--berry)}
+.mo small{opacity:.65}
+.mo .note{max-height:0;overflow:hidden;transition:max-height .5s;font-size:.95rem}
+.mo.open .note{max-height:220px;margin-top:8px}
+
+/* gallery */
+.gal{-webkit-columns:2;columns:2;-webkit-column-gap:10px;column-gap:10px}
+.gal img{width:100%;border-radius:16px;margin-bottom:10px;border:4px solid #fff;box-shadow:0 6px 16px rgba(163,23,79,.18);cursor:pointer;display:block;background:#ffe3ec;min-height:80px}
+.gal img:nth-child(odd){transform:rotate(-1.2deg)}.gal img:nth-child(even){transform:rotate(1.2deg)}
+#lb{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(74,23,48,.88);z-index:90;display:none;align-items:center;justify-content:center;padding:16px}
+#lb.on{display:flex}#lb img{max-width:100%;max-height:90vh;border-radius:14px;border:5px solid #fff}
+
+/* eyes */
+.eyes{background:#fff;border-radius:26px;padding:16px;box-shadow:0 8px 24px rgba(163,23,79,.15);max-width:420px;margin:0 auto}
+.eyes img{width:100%;border-radius:18px;display:block}
+.eyes p{font-family:var(--hand);font-size:1.7rem;margin-top:8px;color:var(--berry)}
+
+/* videos */
+.vids{overflow:hidden;margin:0 -6px}
+.vbox{float:left;width:50%;padding:6px}
+.vwrap{position:relative;width:100%;padding-top:150%;background:#000;border-radius:18px;border:4px solid #fff;box-shadow:0 6px 16px rgba(163,23,79,.18);overflow:hidden}
+.vwrap video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;background:#000}
+.verr{display:none;position:absolute;top:0;left:0;right:0;bottom:0;background:#fff;color:var(--berry);font-weight:700;padding:10px;align-items:center;justify-content:center;text-align:center;font-size:.8rem;flex-direction:column}
+.verr a{color:#ff5d8f;margin-top:6px}
+
+/* letters */
+.lt{display:block;background:#fff;border-radius:20px;padding:18px;box-shadow:0 6px 16px rgba(163,23,79,.12);font-size:1.15rem;font-weight:700;color:var(--berry);width:100%;margin-bottom:12px}
+.lt span{display:block;font-size:2.2rem}
+#modal{position:fixed;top:0;left:0;right:0;bottom:0;z-index:95;background:rgba(74,23,48,.6);display:none;align-items:center;justify-content:center;padding:16px}
+#modal.on{display:flex}
+.paper{background:#fffaf0;max-width:480px;max-height:86vh;overflow:auto;border-radius:18px;padding:26px 22px;text-align:left;font-family:var(--hand);font-size:1.45rem;line-height:1.4;box-shadow:0 20px 50px rgba(0,0,0,.35);animation:pop .4s}
+.paper h3{font-size:2rem;color:var(--berry);line-height:1.2;margin-bottom:6px}
+.paper .x{float:right;background:#ff5d8f;color:#fff;width:34px;height:34px;border-radius:50%;font-size:1rem}
+@keyframes pop{from{transform:scale(.7) rotate(-4deg);opacity:0}}
+
+/* reasons */
+#reason{background:#fff;border-radius:24px;padding:26px 18px;min-height:130px;display:flex;align-items:center;justify-content:center;font-family:var(--hand);font-size:1.9rem;color:var(--berry);line-height:1.25;box-shadow:0 8px 22px rgba(163,23,79,.15);margin-bottom:16px}
+
+/* game */
+#arena{position:relative;height:300px;background:#fff;border-radius:24px;overflow:hidden;box-shadow:inset 0 0 0 4px #ffe3ec;touch-action:manipulation;-webkit-user-select:none;-ms-user-select:none;user-select:none}
+.ch{position:absolute;font-size:2.4rem;cursor:pointer;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(340px)}}
+#score{font-weight:700;margin:10px 0;color:var(--berry)}
+
+/* question */
+#ask{min-height:60vh}
+#ask .row{text-align:center;min-height:130px;position:relative}
+#ask .row .btn{margin:6px 8px}
+#no{background:#fff;color:var(--berry);font-weight:700;padding:13px 26px;border-radius:40px;box-shadow:0 6px 14px rgba(163,23,79,.2);font-size:1.05rem;margin:6px 8px}
+#final{display:none;font-family:var(--hand);font-size:2rem;color:var(--berry);line-height:1.3}
+footer{padding:30px 18px 50px;text-align:center;font-family:var(--hand);font-size:1.6rem;color:var(--berry)}
+.cf{position:fixed;top:-30px;z-index:99;pointer-events:none;animation:cf 3s linear forwards}
+@keyframes cf{to{transform:translateY(110vh) rotate(540deg)}}
+#music{position:fixed;right:12px;top:12px;z-index:50;width:44px;height:44px;border-radius:50%;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.2);font-size:1.3rem;display:none}
+@media(min-width:600px){h2{font-size:3.4rem}#hero h1{font-size:5rem}.cell b{font-size:2rem}.frame{width:260px;height:347px}.vbox{width:33.333%}}
+</style>
+</head>
+<body>
+
+<div id="intro">
+  <p>Saneey, this is for you…</p>
+  <div class="env" id="envelope" role="button" tabindex="0" aria-label="Open the envelope"></div>
+  <p style="font-size:1.4rem">tap to open 💗</p>
+</div>
+
+<div id="hearts"></div>
+<button id="music" aria-label="Play music">🎵</button>
+
+<section id="hero">
+  <div class="frame"><img id="heroImg" alt="Isha Sah"></div>
+  <h1>Happy 6 Months,<br>Saneey 💗</h1>
+  <p class="dates">Jestha 28 → Mangsir 28 ✨</p>
+  <p style="margin-top:14px;font-weight:600">For Isha Sah, my Saneey, my favorite person.</p>
+  <div class="scroll">⬇️</div>
+</section>
+
+<section id="time">
+  <h2>Our time together</h2>
+  <p class="sub">Every second since Jestha 28 has been my favorite.</p>
+  <div class="grid">
+    <div class="cell"><b id="d">0</b><span>days</span></div>
+    <div class="cell"><b id="h">0</b><span>hours</span></div>
+    <div class="cell"><b id="m">0</b><span>minutes</span></div>
+    <div class="cell"><b id="s">0</b><span>seconds</span></div>
+  </div>
+  <p id="cdMsg"></p>
+</section>
+
+<section id="months">
+  <h2>Six months, six chapters</h2>
+  <p class="sub">Tap each month to open a little note.</p>
+  <div class="tl" id="tl"></div>
+</section>
+
+<section id="photos">
+  <h2>Our pretty pictures 📸</h2>
+  <p class="sub">Tap any photo to see it bigger.</p>
+  <div class="gal" id="gal"></div>
+</section>
+
+<section id="eye">
+  <h2>These eyes 👀</h2>
+  <div class="eyes"><img id="eyeImg" alt="Saneey's eye"><p>I could get lost in them forever.</p></div>
+</section>
+
+<section id="videos">
+  <h2>Our little movies 🎬</h2>
+  <p class="sub">Tap play and smile, just like you always do.</p>
+  <div class="vids" id="vids"></div>
+</section>
+
+<section id="letters">
+  <h2>Love letters for you 💌</h2>
+  <p class="sub">Open them one by one. There is no rush.</p>
+  <div id="lets"></div>
+</section>
+
+<section id="why">
+  <h2>Why I love you 🥰</h2>
+  <p class="sub">Tap the button for a reason.</p>
+  <div id="reason">Tap below 👇</div>
+  <button class="btn" id="rbtn">Show me a reason 💖</button>
+</section>
+
+<section id="game">
+  <h2>Catch my hearts 💘</h2>
+  <p class="sub">They are all yours. Tap them before they fall!</p>
+  <div id="arena"></div>
+  <div id="score">Hearts caught: 0</div>
+  <button class="btn" id="gbtn">Start ▶</button>
+</section>
+
+<section id="ask">
+  <h2>One last question…</h2>
+  <p class="sub" style="font-size:1.2rem">Saneey, will you keep being mine for the next 6 months, and the 6 after that, and forever?</p>
+  <div class="row" id="row">
+    <button class="btn" id="yes">YES 💕</button>
+    <button id="no">No 🙈</button>
+  </div>
+  <div id="final">Maya garchu, Saneey! 🥹💗<br>You just made me the happiest person in the world.<br>Happy 6 months, my love. Here is to forever. 🌹</div>
+</section>
+
+<footer>Made with all my love, by <span id="me"></span> 💗<br><small style="font-size:1.1rem">Jestha 28 → Mangsir 28 · and counting ♾️</small></footer>
+
+<div id="lb"><img id="lbImg" alt=""></div>
+<div id="modal"><div class="paper" id="paper"></div></div>
+
+<script>
+/* ===== EDIT THESE ===== */
+var MY_NAME = "Aman Shah";
+var START   = "2026-06-11T00:00:00+05:45";   /* Jestha 28, 2083 BS */
+var ANNIV   = "2026-12-14T00:00:00+05:45";   /* Mangsir 28, 2083 BS */
+var MUSIC   = "song.mp3";                    /* optional */
+/* ====================== */
+
+var pics = ["pic 1.jpeg","pic2.jpeg","pic 3.jpeg","pic 4.jpeg","pic5.jpg.jpeg","pic6.jpg.jpeg","pic7.jpeg","pic8.jpeg"];
+var videos = ["isha1.mp4","isha2.mp4","isha3.mp4","isha4.mp4","isha5.mp4","isha6.mp4","isha7.mp4","isha8.mp4","isha9.mp4","isha10.mp4","isha11.mp4","isha12.mp4","isha13.mp4","isha14.mp4"];
+
+function $(id){return document.getElementById(id);}
+function src(f){return encodeURI(f);}
+
+$("me").textContent = MY_NAME;
+$("heroImg").src = src("pic 1.jpeg");
+$("eyeImg").src  = src("eye.jpeg");
+
+/* intro */
+function openIntro(){
+  $("intro").className = "gone";
+  setTimeout(function(){ $("intro").style.display = "none"; }, 1000);
+  burst(30); tryMusic();
+}
+$("envelope").onclick = openIntro;
+$("intro").onclick = openIntro;
+$("envelope").onkeydown = function(e){ if(e.key==="Enter"||e.key===" ") openIntro(); };
+
+/* floating hearts */
+var em = ["💗","💖","💕","🌸","✨","💞","🌷"];
+setInterval(function(){
+  var h = document.createElement("div"); h.className = "fh"; h.textContent = em[Math.floor(Math.random()*em.length)];
+  h.style.left = Math.random()*96 + "vw"; h.style.fontSize = (14+Math.random()*22) + "px";
+  h.style.animationDuration = (7+Math.random()*7) + "s"; $("hearts").appendChild(h);
+  setTimeout(function(){ if(h.parentNode) h.parentNode.removeChild(h); }, 15000);
+}, 900);
+
+/* confetti */
+function burst(n){
+  n = n || 60;
+  var set = ["💖","🎉","✨","🌸","💕","🎊","🌹"];
+  for(var i=0;i<n;i++){
+    (function(i){
+      var c = document.createElement("div"); c.className = "cf"; c.textContent = set[i%set.length];
+      c.style.left = Math.random()*100 + "vw"; c.style.fontSize = (18+Math.random()*20) + "px";
+      c.style.animationDuration = (2+Math.random()*2.5) + "s"; c.style.animationDelay = Math.random()*0.8 + "s";
+      document.body.appendChild(c);
+      setTimeout(function(){ if(c.parentNode) c.parentNode.removeChild(c); }, 6000);
+    })(i);
+  }
+}
+
+/* counters */
+var start = new Date(START), anniv = new Date(ANNIV);
+function tick(){
+  var now = new Date(), t = Math.max(0, now - start)/1000;
+  $("d").textContent = Math.floor(t/86400);
+  $("h").textContent = Math.floor(t/3600%24);
+  $("m").textContent = Math.floor(t/60%60);
+  $("s").textContent = Math.floor(t%60);
+  var left = anniv - now, days = Math.ceil(left/86400000);
+  $("cdMsg").textContent = left > 86400000
+    ? "Only " + days + " more day" + (days>1?"s":"") + " until our 6 month anniversary! 🎉"
+    : left > 0 ? "Our 6 month anniversary is TOMORROW! 🥳" : "Today we are 6 months old, my love! 🎂💗";
+}
+tick(); setInterval(tick, 1000);
+
+/* timeline */
+var months = [
+ ["🌱","Jestha 28","Where it all began","The day my life got a whole lot sweeter. I did not know it yet, but you were about to become my favorite person."],
+ ["🌧️","Asar 28","One month with you","Rainy days felt cozy because I was thinking about you. One month, and I was already hooked."],
+ ["🍃","Shrawan 28","Two months of us","Two months of late chats, silly jokes, and smiles I could not hide. You made ordinary days special."],
+ ["🌼","Bhadra 28","Three months, a quarter of a year","Three months in, I knew this was real. You feel like home, Saneey."],
+ ["🪔","Ashwin 28","Four months and festival lights","Dashain and Tihar are all about light, and you are the brightest one in my life."],
+ ["🍂","Kartik 28","Five months of falling for you","Every day I find a new reason to love you more. Five months, and my heart is still racing."],
+ ["💍","Mangsir 28","SIX MONTHS! 🎉","Half a year of you, and I would choose you again in every single month. Here is to many more, my love."]
+];
+$("tl").innerHTML = months.map(function(m){
+  return '<div class="mo"><div class="dot">'+m[0]+'</div><button class="card"><h3>'+m[2]+'</h3><small>'+m[1]+'</small><div class="note">'+m[3]+'</div></button></div>';
+}).join("");
+Array.prototype.forEach.call(document.querySelectorAll(".mo .card"), function(c){
+  c.onclick = function(){
+    var p = c.parentNode;
+    p.className = (p.className.indexOf("open") > -1) ? "mo" : "mo open";
+  };
+});
+
+/* gallery + lightbox */
+$("gal").innerHTML = pics.map(function(p){ return '<img src="'+src(p)+'" alt="Our memory">'; }).join("");
+Array.prototype.forEach.call(document.querySelectorAll("#gal img"), function(i){
+  i.onclick = function(){ $("lbImg").src = i.src; $("lb").className = "on"; };
+});
+$("lb").onclick = function(){ $("lb").className = ""; };
+
+/* videos */
+$("vids").innerHTML = videos.map(function(v){
+  return '<div class="vbox"><div class="vwrap">' +
+    '<video controls playsinline preload="metadata" src="'+src(v)+'"></video>' +
+    '<div class="verr">Cannot play '+v+' 😢<a href="'+src(v)+'">Open video</a></div>' +
+    '</div></div>';
+}).join("");
+Array.prototype.forEach.call(document.querySelectorAll("#vids video"), function(vid){
+  vid.addEventListener("error", function(){ vid.nextSibling.style.display = "flex"; });
+});
+document.addEventListener("play", function(e){
+  Array.prototype.forEach.call(document.querySelectorAll("video"), function(v){ if(v !== e.target) v.pause(); });
+}, true);
+
+/* letters */
+var letters = [
+ ["💌","Read me first","My dearest Saneey,","Six months ago I did not know how much one person could change my world. Then you came into it, and everything got softer, brighter, and happier. Thank you for every laugh, every late-night talk, and every time you made me feel like I am enough. I love you more than words can say. Always yours."],
+ ["🌙","Open when you miss me","My Saneey,","Close your eyes and take a deep breath. I am right there with you, even when we are far apart. Every moment away just makes me more excited to see you again. Look at the stars tonight, because I am looking at them too, thinking of you."],
+ ["🥺","Open when you are sad","My sweet Isha,","Hey, come here. It is okay to have a bad day. You are stronger than you know, and you are never alone, because I am on your side always. Drink some water, smile for me, and remember: this too shall pass. I love you."],
+ ["😂","Open when you need a smile","Hello cutie,","Fun fact: you are the cutest person alive and I have proof. Your smile, your eyes, and your laugh are my three favorite things. Now smile, that is an order from your boyfriend. 😘"],
+ ["🌹","Open on our anniversary","To my forever,","Six months. Half a year. 180 days of choosing you, and I would choose you for another 180, and then another. You are my best friend, my peace, and my happiest place. Happy 6 months, Saneey. Here is to our future, together. Maya garchu."]
+];
+$("lets").innerHTML = letters.map(function(l,i){
+  return '<button class="lt" data-i="'+i+'"><span>'+l[0]+'</span>'+l[1]+'</button>';
+}).join("");
+Array.prototype.forEach.call(document.querySelectorAll(".lt"), function(b){
+  b.onclick = function(){
+    var l = letters[b.getAttribute("data-i")];
+    $("paper").innerHTML = '<button class="x" aria-label="Close">✕</button><h3>'+l[2]+'</h3>'+l[3]+'<br><br>With all my love,<br>'+MY_NAME+' 💗';
+    $("modal").className = "on"; burst(14);
+    $("paper").querySelector(".x").onclick = function(){ $("modal").className = ""; };
+  };
+});
+$("modal").onclick = function(e){ if(e.target.id === "modal") $("modal").className = ""; };
+
+/* reasons */
+var reasons = ["Your smile makes my whole day 😊","The way you say my name 🥹","Your beautiful eyes that I get lost in 👀","You make me want to be a better person 🌟","Your cute little laugh 😆","You listen to me when no one else does 💞","Your selfies are the cutest in the world 🤳","You feel like home 🏡","You are kind to everyone 🌸","You are my best friend and my love 💗","Even your angry face is cute 😤","Because you are Saneey, and there is only one of you 💎"];
+var ri = -1;
+$("rbtn").onclick = function(){
+  var n; do { n = Math.floor(Math.random()*reasons.length); } while(n === ri);
+  ri = n; $("reason").textContent = reasons[n]; $("rbtn").textContent = "Another one 💖";
+};
+
+/* game */
+var score = 0, run = false, timer;
+$("gbtn").onclick = function(){
+  if(run) return; run = true; score = 0;
+  $("score").textContent = "Hearts caught: 0"; $("gbtn").textContent = "Playing…";
+  var n = 0;
+  timer = setInterval(function(){
+    var h = document.createElement("div"); h.className = "ch"; h.textContent = ["💖","💗","💘","💝"][n%4];
+    h.style.left = Math.random()*85 + "%"; h.style.top = "-50px"; h.style.animationDuration = (2+Math.random()*1.5) + "s";
+    var hit = function(){ score++; $("score").textContent = "Hearts caught: " + score; h.textContent = "✨"; setTimeout(function(){ if(h.parentNode) h.parentNode.removeChild(h); }, 150); };
+    h.onclick = hit; h.ontouchstart = function(e){ e.preventDefault(); hit(); };
+    $("arena").appendChild(h);
+    setTimeout(function(){ if(h.parentNode) h.parentNode.removeChild(h); }, 3800);
+    n++;
+    if(n >= 20){
+      clearInterval(timer);
+      setTimeout(function(){
+        run = false; $("gbtn").textContent = "Play again ▶";
+        $("score").textContent = "You caught " + score + " hearts! But you already caught mine. 💘";
+        if(score >= 10) burst(30);
+      }, 3500);
+    }
+  }, 700);
+};
+
+/* the question */
+var no = $("no");
+function dodge(e){
+  if(e && e.preventDefault) e.preventDefault();
+  var r = $("row").getBoundingClientRect();
+  no.style.position = "absolute";
+  no.style.left = Math.random()*Math.max(10, r.width - no.offsetWidth) + "px";
+  no.style.top  = Math.random()*Math.max(10, 130 - no.offsetHeight) + "px";
+  var t = ["Are you sure? 🥺","Try again 😜","Nope, not allowed 🙅‍♂️","Think again, Saneey 💕","Just press YES 😘"];
+  no.textContent = t[Math.floor(Math.random()*t.length)];
+}
+no.addEventListener("mouseover", dodge);
+no.addEventListener("click", dodge);
+no.addEventListener("touchstart", dodge);
+$("yes").onclick = function(){ $("row").style.display = "none"; $("final").style.display = "block"; burst(120); };
+
+/* music (optional) */
+var audio = new Audio(MUSIC); audio.loop = true;
+audio.addEventListener("canplaythrough", function(){ $("music").style.display = "block"; });
+function tryMusic(){ try{ var p = audio.play(); if(p && p.then) p.then(function(){ $("music").textContent = "🔊"; }).catch(function(){}); }catch(e){} }
+$("music").onclick = function(){
+  if(audio.paused){ audio.play(); $("music").textContent = "🔊"; } else { audio.pause(); $("music").textContent = "🎵"; }
+};
+</script>
+</body>
+</html>
